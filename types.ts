@@ -309,30 +309,8 @@ export const MOCK_EVENTS: EventItem[] = [
         type: 'raffle',
         typeLabel: '周邊抽獎',
         timeLeft: '剩餘 12 小時',
-        participants: 850,
-        requirement: 'VIP',
-        status: 'active'
-    },
-    {
-        id: 'e4',
-        title: '《電馭叛客 2077》攝影大賽',
-        description: '分享你在夜之城拍下的最美（或最色）瞬間，贏取點數獎勵。',
-        imageUrl: 'https://picsum.photos/id/115/600/400',
-        type: 'challenge',
-        typeLabel: '投稿活動',
-        participants: 45,
-        maxParticipants: 100,
-        requirement: 'Member',
-        status: 'active'
-    },
-    {
-        id: 'e5',
-        title: 'VIP 專屬：本月 4K 桌布包 Vol.12',
-        description: '由繪師合作提供的 10 張高品質插畫，無浮水印。',
-        imageUrl: 'https://picsum.photos/id/116/600/400',
-        type: 'exclusive',
-        typeLabel: '會員限定',
-        participants: 230,
+        participants: 890,
+        maxParticipants: 1000,
         requirement: 'VIP',
         status: 'active'
     }
@@ -342,7 +320,7 @@ export const MOCK_LATEST_NEWS: LatestNewsItem[] = [
     {
         id: 'n1',
         title: '《NtRIdol: Déjà Vu》地下偶像的命運，由你鏡頭下的私生活決定',
-        imageUrl: '/test4.png',
+        imageUrl: 'https://i.meee.com.tw/VTCnH24.png',
         category: '紳士專區',
         categoryColor: 'bg-red-600',
         timeAgo: '1 小時前',
@@ -352,7 +330,7 @@ export const MOCK_LATEST_NEWS: LatestNewsItem[] = [
     {
         id: 'n2',
         title: '《無人島社員旅行記》女同事們的生存戰略，與上司的荒島求生',
-        imageUrl: '/test5.png',
+        imageUrl: 'https://i.meee.com.tw/sC1RzJj.png',
         category: 'PC',
         categoryColor: 'bg-blue-600',
         timeAgo: '2 小時前',
@@ -362,7 +340,7 @@ export const MOCK_LATEST_NEWS: LatestNewsItem[] = [
     {
         id: 'n3',
         title: '《雀姬》x《與經紀人戀愛是絕對禁止 II》聯動確認！限定角色登場',
-        imageUrl: '/test1.jpg',
+        imageUrl: 'https://i.meee.com.tw/SOMl9Fs.jpg',
         category: '活動',
         categoryColor: 'bg-purple-600',
         timeAgo: '4 小時前',
@@ -372,7 +350,7 @@ export const MOCK_LATEST_NEWS: LatestNewsItem[] = [
     {
         id: 'n4',
         title: '《夏色四葉草》中文版更新：修復翻譯錯誤並追加 DLC 劇情',
-        imageUrl: '/test2.jpg',
+        imageUrl: 'https://i.meee.com.tw/abwNbM5.jpg',
         category: '補丁',
         categoryColor: 'bg-brand-primary',
         timeAgo: '5 小時前',
@@ -382,7 +360,7 @@ export const MOCK_LATEST_NEWS: LatestNewsItem[] = [
     {
         id: 'n5',
         title: '夢幻共演：明星少女們的甜蜜假期，跨作品聯合活動開跑',
-        imageUrl: '/test3.jpg',
+        imageUrl: 'https://i.meee.com.tw/lYrqojK.jpg',
         category: '活動',
         categoryColor: 'bg-purple-600',
         timeAgo: '6 小時前',
