@@ -153,75 +153,246 @@ export const MOCK_NEWS: NewsItem[] = [
   {
     id: '1',
     title: '《電馭叛客 2077》「夜之城無修版」Mod v4.0 深度評測',
-    summary: '徹底重製了戀愛系統與模型物理效果。此模組以開發者未曾設想的方式讓城市鮮活起來，帶來前所未有的沈浸體驗。',
+    summary: '徹底重製了戀愛系統與模型物理效果。此模組以開發者未曾設想的方式讓城市鮮活起來...',
     category: '評測',
-    date: '2 小時前',
-    imageUrl: 'https://picsum.photos/id/122/800/450',
-    isFeatured: true,
-    linkedPatchId: 'p1'
+    date: '2023-10-27',
+    imageUrl: 'https://picsum.photos/id/201/400/300'
   },
   {
     id: '2',
-    title: '《尼爾：自動人形》「2B 強化版」材質包更新',
-    summary: '修復過場動畫材質閃爍問題，並新增全角色的 4K 高解析度皮膚紋理。',
-    category: '更新日誌',
-    date: '5 小時前',
-    imageUrl: 'https://picsum.photos/id/21/200/150',
-    linkedPatchId: 'p2'
+    title: '《幻獸帕魯》裸體模組 v0.5 發布，修正穿模問題',
+    summary: '最新的版本修復了在騎乘飛行帕魯時的模型錯誤，並新增了三套可替換的皮膚。',
+    category: '模組',
+    date: '2023-10-24',
+    imageUrl: 'https://picsum.photos/id/202/400/300',
+    linkedPatchId: 'palworld'
   },
   {
     id: '3',
-    title: '《柏德之門 3》全新戀愛選項模組發布',
-    summary: '透過此粉絲製作的修復計畫，解鎖隱藏的對話樹與被官方刪減的親密場景。',
-    category: '模組',
-    date: '1 天前',
-    imageUrl: 'https://picsum.photos/id/54/200/150'
+    title: '【漢化】Baldr Sky 潛水員線完整漢化補丁釋出',
+    summary: '歷時三年的大型漢化工程終於完工。本次更新包含所有 DLC 內容與隱藏劇情。',
+    category: '新聞',
+    date: '2023-10-23',
+    imageUrl: 'https://picsum.photos/id/203/400/300',
+    linkedPatchId: 'baldr'
   },
   {
     id: '4',
-    title: '《艾爾登法環》「不再是無女巫」同伴擴充包',
-    summary: '新增 3 位擁有完整語音演出與複雜任務線的同伴 NPC，旅途不再孤單。',
-    category: '新聞',
-    date: '2 天前',
-    imageUrl: 'https://picsum.photos/id/88/200/150'
+    title: 'Honey Select 2 DX 新增 50 張高質量角色卡分享',
+    summary: '本週精選社群投稿，包含熱門動漫角色還原與原創高模。',
+    category: '模組',
+    date: '2023-10-22',
+    imageUrl: 'https://picsum.photos/id/204/400/300'
+  },
+  {
+    id: '5',
+    title: '《星空》DLSS 3.0 補丁安裝教學與效能實測',
+    summary: '對於 N 卡用戶來說是必裝的補丁，我們實測發現 FPS 提升了近 40%。',
+    category: '評測',
+    date: '2023-10-20',
+    imageUrl: 'https://picsum.photos/id/205/400/300'
   }
+];
+
+export const MOCK_PATCHES: PatchItem[] = [
+  {
+    id: 'nier',
+    gameTitle: 'Nier: Automata',
+    version: 'v1.0.4 Final',
+    size: '1.2 GB',
+    date: '2023-11-20',
+    downloads: 8900,
+    imageUrl: 'https://picsum.photos/id/1/400/300',
+    tags: ['漢化', '去碼', '最佳化']
+  },
+  {
+    id: 'cyberpunk',
+    gameTitle: 'Cyberpunk 2077',
+    version: 'v2.12b',
+    size: '540 MB',
+    date: '2023-11-18',
+    downloads: 12500,
+    imageUrl: 'https://picsum.photos/id/2/400/300',
+    tags: ['裸體模組', '4K 材質', '物理效果']
+  },
+  {
+    id: 'honeyselect2',
+    gameTitle: 'Honey Select 2',
+    version: 'v5.0 DX',
+    size: '15 GB',
+    date: '2023-11-12',
+    downloads: 34000,
+    imageUrl: 'https://picsum.photos/id/3/400/300',
+    tags: ['完整漢化', '角色卡', '解鎖補丁']
+  },
+  {
+    id: 'eldenring',
+    gameTitle: 'Elden Ring',
+    version: 'v1.09',
+    size: '2.4 GB',
+    date: '2023-11-15',
+    downloads: 6200,
+    imageUrl: 'https://picsum.photos/id/4/400/300',
+    tags: ['裸體模組', '無縫連線', '寬螢幕']
+  },
+  {
+    id: 're4',
+    gameTitle: 'Resident Evil 4',
+    version: 'v1.2 Ada',
+    size: '800 MB',
+    date: '2023-11-10',
+    downloads: 15000,
+    imageUrl: 'https://picsum.photos/id/5/400/300',
+    tags: ['服裝替換', '物理效果']
+  },
+  {
+    id: 'ff7',
+    gameTitle: 'Final Fantasy VII',
+    version: 'v3.0 Tifa',
+    size: '3.2 GB',
+    date: '2023-11-05',
+    downloads: 41000,
+    imageUrl: 'https://picsum.photos/id/6/400/300',
+    tags: ['4K 影片', '模型替換']
+  },
+  {
+    id: 'baldr',
+    gameTitle: 'Baldr Sky',
+    version: 'v1.2 Final',
+    size: '4.5 GB',
+    date: '2023-10-30',
+    downloads: 12042,
+    imageUrl: 'https://picsum.photos/id/7/400/300',
+    tags: ['完整漢化', '修正補丁']
+  },
+  {
+    id: 'palworld',
+    gameTitle: 'Palworld',
+    version: 'v0.5.1',
+    size: '120 MB',
+    date: '2023-10-24',
+    downloads: 5600,
+    imageUrl: 'https://picsum.photos/id/8/400/300',
+    tags: ['模型替換', '畫質優化']
+  }
+];
+
+export const MOCK_EVENTS: EventItem[] = [
+    {
+        id: 'e1',
+        title: '《艾爾登法環》Steam 正版序號 (3名)',
+        description: '為慶祝 DLC 發售，特別提供 3 組標準版序號給會員抽獎。完全免費參加！',
+        imageUrl: 'https://picsum.photos/id/112/600/400',
+        type: 'raffle',
+        typeLabel: '抽獎活動',
+        timeLeft: '剩餘 2 天',
+        participants: 1240,
+        requirement: 'Member',
+        status: 'active'
+    },
+    {
+        id: 'e2',
+        title: '2024 年度紳士遊戲漢化懶人包 (PDF)',
+        description: '收錄本站精選的 50 款必玩遊戲與其對應的補丁連結，新手入門必備。',
+        imageUrl: 'https://picsum.photos/id/113/600/400',
+        type: 'freebie',
+        typeLabel: '免費領取',
+        participants: 5890,
+        requirement: 'Member',
+        status: 'active'
+    },
+    {
+        id: 'e3',
+        title: '原神 刻晴 1/7 手辦模型 (1名)',
+        description: '感謝祭特別活動！由站長私人提供，全新未拆封。',
+        imageUrl: 'https://picsum.photos/id/114/600/400',
+        type: 'raffle',
+        typeLabel: '周邊抽獎',
+        timeLeft: '剩餘 12 小時',
+        participants: 850,
+        requirement: 'VIP',
+        status: 'active'
+    },
+    {
+        id: 'e4',
+        title: '《電馭叛客 2077》攝影大賽',
+        description: '分享你在夜之城拍下的最美（或最色）瞬間，贏取點數獎勵。',
+        imageUrl: 'https://picsum.photos/id/115/600/400',
+        type: 'challenge',
+        typeLabel: '投稿活動',
+        participants: 45,
+        maxParticipants: 100,
+        requirement: 'Member',
+        status: 'active'
+    },
+    {
+        id: 'e5',
+        title: 'VIP 專屬：本月 4K 桌布包 Vol.12',
+        description: '由繪師合作提供的 10 張高品質插畫，無浮水印。',
+        imageUrl: 'https://picsum.photos/id/116/600/400',
+        type: 'exclusive',
+        typeLabel: '會員限定',
+        participants: 230,
+        requirement: 'VIP',
+        status: 'active'
+    }
 ];
 
 export const MOCK_LATEST_NEWS: LatestNewsItem[] = [
     {
-        id: 'ln1',
-        title: '《Hades II》搶先體驗版推出首日好評如潮，新增繁體中文支援',
-        imageUrl: 'https://picsum.photos/id/134/400/225',
-        category: '多平台',
-        categoryColor: 'bg-orange-600',
-        timeAgo: '2 小時前',
-        likes: 156,
-        comments: 34
+        id: 'n1',
+        title: '《NtRIdol: Déjà Vu》地下偶像的命運，由你鏡頭下的私生活決定',
+        imageUrl: '/test4.png',
+        category: '紳士專區',
+        categoryColor: 'bg-red-600',
+        timeAgo: '1 小時前',
+        likes: 1240,
+        comments: 356
     },
     {
-        id: 'ln2',
-        title: '《幻獸帕魯》開發商澄清：沒有被任天堂收購的計畫，將保持獨立營運',
-        imageUrl: 'https://picsum.photos/id/135/400/225',
+        id: 'n2',
+        title: '《無人島社員旅行記》女同事們的生存戰略，與上司的荒島求生',
+        imageUrl: '/test5.png',
         category: 'PC',
         categoryColor: 'bg-blue-600',
-        timeAgo: '5 小時前',
-        likes: 892,
+        timeAgo: '2 小時前',
+        likes: 890,
         comments: 120
     },
     {
-        id: 'ln3',
-        title: '由《刀劍神域》團隊打造！新作動作 RPG《Fractured Daydream》公開首支預告',
-        imageUrl: 'https://picsum.photos/id/136/400/225',
-        category: '動漫',
-        categoryColor: 'bg-pink-600',
-        timeAgo: '昨天',
-        likes: 45,
-        comments: 8
+        id: 'n3',
+        title: '《雀姬》x《與經紀人戀愛是絕對禁止 II》聯動確認！限定角色登場',
+        imageUrl: '/test1.jpg',
+        category: '活動',
+        categoryColor: 'bg-purple-600',
+        timeAgo: '4 小時前',
+        likes: 2300,
+        comments: 560
     },
     {
-        id: 'ln4',
-        title: '《星露谷物語》v1.6 大型更新模組相容性列表整理：這 5 個必裝 Mod 已更新',
-        imageUrl: 'https://picsum.photos/id/137/400/225',
+        id: 'n4',
+        title: '《夏色四葉草》中文版更新：修復翻譯錯誤並追加 DLC 劇情',
+        imageUrl: '/test2.jpg',
+        category: '補丁',
+        categoryColor: 'bg-brand-primary',
+        timeAgo: '5 小時前',
+        likes: 560,
+        comments: 89
+    },
+    {
+        id: 'n5',
+        title: '夢幻共演：明星少女們的甜蜜假期，跨作品聯合活動開跑',
+        imageUrl: '/test3.jpg',
+        category: '活動',
+        categoryColor: 'bg-purple-600',
+        timeAgo: '6 小時前',
+        likes: 1500,
+        comments: 300
+    },
+    {
+        id: 'n6',
+        title: '《星露谷物語》v1.6 大型更新模組相容性列表整理',
+        imageUrl: 'https://picsum.photos/id/20/400/225',
         category: '補丁',
         categoryColor: 'bg-brand-primary',
         timeAgo: '昨天',
@@ -229,29 +400,9 @@ export const MOCK_LATEST_NEWS: LatestNewsItem[] = [
         comments: 56
     },
     {
-        id: 'ln5',
-        title: '【會員限定】PatchHub 周年慶抽獎活動開跑！最大獎 PS5 Slim 主機一台',
-        imageUrl: 'https://picsum.photos/id/139/400/225',
-        category: '活動',
-        categoryColor: 'bg-purple-600',
-        timeAgo: '2 天前',
-        likes: 1200,
-        comments: 800
-    },
-    {
-        id: 'ln6',
-        title: '《勝利女神：妮姬》全新角色「皇冠」技能數值解包，強度直逼 T0 級別',
-        imageUrl: 'https://picsum.photos/id/140/400/225',
-        category: '手遊',
-        categoryColor: 'bg-brand-accent',
-        timeAgo: '2 天前',
-        likes: 340,
-        comments: 99
-    },
-    {
-        id: 'ln7',
-        title: 'NVIDIA RTX 5090 規格傳聞流出：記憶體頻寬提升 50%，功耗恐突破 600W',
-        imageUrl: 'https://picsum.photos/id/141/400/225',
+        id: 'n7',
+        title: 'NVIDIA RTX 5090 規格傳聞流出：記憶體頻寬提升 50%',
+        imageUrl: 'https://picsum.photos/id/24/400/225',
         category: '硬體',
         categoryColor: 'bg-gray-600',
         timeAgo: '3 天前',
@@ -259,129 +410,13 @@ export const MOCK_LATEST_NEWS: LatestNewsItem[] = [
         comments: 12
     },
     {
-        id: 'ln8',
-        title: 'I社復活？全新成人遊戲品牌 Illgames 發表首款大作《Honey Come》',
-        imageUrl: 'https://picsum.photos/id/142/400/225',
+        id: 'n8',
+        title: 'I社復活？全新成人遊戲品牌 Illgames 發表首款大作',
+        imageUrl: 'https://picsum.photos/id/30/400/225',
         category: 'R18',
         categoryColor: 'bg-red-600',
         timeAgo: '3 天前',
         likes: 2100,
         comments: 450
     }
-];
-
-export const MOCK_PATCHES: PatchItem[] = [
-  {
-    id: 'p1',
-    gameTitle: 'Cyberpunk 2077',
-    version: 'v2.12b',
-    size: '4.5 GB',
-    date: '2023-10-24',
-    downloads: 12500,
-    imageUrl: 'https://picsum.photos/id/122/600/338',
-    tags: ['裸體模組', '4K 材質']
-  },
-  {
-    id: 'p2',
-    gameTitle: 'Nier: Automata',
-    version: 'v1.0.4 Final',
-    size: '1.2 GB',
-    date: '2023-10-22',
-    downloads: 8900,
-    imageUrl: 'https://picsum.photos/id/21/600/338',
-    tags: ['最佳化', '去碼無修']
-  },
-  {
-    id: 'p3',
-    gameTitle: 'Honey Select 2',
-    version: 'v5.0 DX',
-    size: '850 MB',
-    date: '2023-10-20',
-    downloads: 34200,
-    imageUrl: 'https://picsum.photos/id/64/600/338',
-    tags: ['完整漢化', '角色卡']
-  },
-  {
-    id: 'p4',
-    gameTitle: 'Resident Evil 4 Remake',
-    version: 'v1.2 Ada',
-    size: '2.1 GB',
-    date: '2023-10-18',
-    downloads: 15600,
-    imageUrl: 'https://picsum.photos/id/96/600/338',
-    tags: ['服裝替換', '物理效果']
-  },
-  {
-    id: 'p5',
-    gameTitle: 'Final Fantasy VII Remake',
-    version: 'v3.0 Tifa',
-    size: '3.0 GB',
-    date: '2023-10-15',
-    downloads: 41000,
-    imageUrl: 'https://picsum.photos/id/111/600/338',
-    tags: ['4K 影片', '模型替換']
-  }
-];
-
-export const MOCK_EVENTS: EventItem[] = [
-  {
-    id: 'e1',
-    title: '《艾爾登法環》Steam 正版序號 (3名)',
-    description: '為慶祝 DLC 發售，特別提供 3 組標準版序號給會員抽獎。完全免費參加，中獎機率透明公開。',
-    imageUrl: 'https://picsum.photos/id/30/600/400',
-    type: 'raffle',
-    typeLabel: '抽獎活動',
-    timeLeft: '剩餘 2 天',
-    participants: 1240,
-    requirement: 'Member',
-    status: 'active'
-  },
-  {
-    id: 'e2',
-    title: '2024 年度紳士遊戲漢化懶人包 (PDF)',
-    description: '收錄本站精選的 50 款必玩遊戲與其對應的補丁連結，新手入門必備指南。含獨家安裝教學。',
-    imageUrl: 'https://picsum.photos/id/42/600/400',
-    type: 'freebie',
-    typeLabel: '免費領取',
-    requirement: 'Member',
-    status: 'active'
-  },
-  {
-    id: 'e3',
-    title: '原神 刻晴 1/7 手辦模型 (1名)',
-    description: '感謝祭特別活動！由站長私人提供，全新未拆封正版模型。VIP 會員享有 2 倍中獎機率。',
-    imageUrl: 'https://picsum.photos/id/65/600/400',
-    type: 'raffle',
-    typeLabel: '周邊抽獎',
-    timeLeft: '剩餘 12 小時',
-    participants: 520,
-    maxParticipants: 1000,
-    requirement: 'VIP',
-    status: 'active'
-  },
-  {
-    id: 'e4',
-    title: 'Cyberpunk 2077 私人伺服器測試資格',
-    description: '參與我們自建的多人連線模組壓力測試。名額有限，先搶先贏。',
-    imageUrl: 'https://picsum.photos/id/122/600/400',
-    type: 'exclusive',
-    typeLabel: '會員限定',
-    timeLeft: '剩餘 5 天',
-    participants: 88,
-    maxParticipants: 100,
-    requirement: 'VIP',
-    status: 'active'
-  },
-  {
-    id: 'e5',
-    title: '每週截圖大賽：最美夜之城',
-    description: '上傳您的遊戲截圖，獲得最多讚數的前三名可獲得 1 個月 VIP 資格。',
-    imageUrl: 'https://picsum.photos/id/230/600/400',
-    type: 'challenge',
-    typeLabel: '社群挑戰',
-    timeLeft: '剩餘 6 天',
-    participants: 45,
-    requirement: 'None',
-    status: 'active'
-  }
 ];
