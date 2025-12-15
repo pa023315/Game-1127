@@ -2,10 +2,10 @@
 import React from 'react';
 
 const PROMOS = [
-  { id: 1, image: 'https://i.meee.com.tw/CpO5zIA.png', link: '#' },
-  { id: 2, image: 'https://i.meee.com.tw/CpO5zIA.png', link: '#' },
-  { id: 3, image: 'https://i.meee.com.tw/CpO5zIA.png', link: '#' },
-  { id: 4, image: 'https://i.meee.com.tw/CpO5zIA.png', link: '#' },
+  { id: 1, image: 'https://i.meee.com.tw/SOMl9Fs.jpg', link: '#' },
+  { id: 2, image: 'https://i.meee.com.tw/abwNbM5.jpg', link: '#' },
+  { id: 3, image: 'https://i.meee.com.tw/sC1RzJj.png', link: '#' },
+  { id: 4, image: 'https://i.meee.com.tw/VTCnH24.png', link: '#' },
 ];
 
 export const PromoGrid: React.FC = () => {
