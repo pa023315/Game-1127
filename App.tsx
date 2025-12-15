@@ -61,12 +61,16 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-brand-darker font-sans text-brand-light pt-16">
+    <div className="min-h-screen flex flex-col bg-brand-darker font-sans text-brand-light pt-16 relative overflow-x-hidden">
+      
       <Navbar activePage={currentPage} onNavigate={handleNavigate} />
+      
       <main className="flex-grow flex flex-col">
         {renderPage()}
       </main>
+      
       <Footer />
+
       {toast && (
         <Toast 
             message={toast.msg} 

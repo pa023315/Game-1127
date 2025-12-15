@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { MOCK_NEWS, MOCK_HEADLINE_MAIN, MOCK_HEADLINE_SIDE } from '../types';
 import { Button } from '../components/Button';
+import { PromoGrid } from '../components/PromoGrid';
 
 interface NewsFeedProps {
     onShowToast: (msg: string, type?: 'success' | 'info') => void;
@@ -115,6 +116,10 @@ export const NewsFeed: React.FC<NewsFeedProps> = ({ onShowToast, onNavigateDetai
             </div>
         </div>
       </section>
+
+      {/* --- PROMO GRID SECTION (Inserted) --- */}
+      <PromoGrid />
+      {/* ------------------------------------- */}
 
       {/* 2. Existing List Header & Filter */}
       <div className="flex flex-col md:flex-row justify-between items-end mb-10 border-b border-slate-800 pb-4">

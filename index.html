@@ -13,20 +13,23 @@
           extend: {
             colors: {
               brand: {
-                dark: '#0f172a',    // Slate 900
-                darker: '#020617',  // Slate 950
-                light: '#e2e8f0',   // Slate 200
-                primary: '#10b981', // Emerald 500
-                accent: '#d946ef',  // Fuchsia 500
+                dark: '#2A2438',    // Lighter purple-ish slate for cards
+                darker: '#1A1625',  // Deep purple background (Main BG)
+                light: '#FCE7F3',   // Pinkish white text
+                primary: '#F5317F', // Hot Pink (Main Action)
+                secondary: '#B845FF', // Neon Purple (Gradient/Secondary)
+                accent: '#00F0FF',  // Cyan (Highlights)
+                surface: '#231e32', // Slightly lighter than background
               }
             },
             fontFamily: {
-              sans: ['Inter', 'Roboto', 'sans-serif'],
-              mono: ['Fira Code', 'Courier New', 'monospace'],
+              sans: ['Inter', 'Nunito', 'sans-serif'], // Added Nunito for a friendlier look
+              mono: ['Fira Code', 'monospace'],
             },
             animation: {
               'fade-in': 'fadeIn 0.5s ease-out',
               'fade-in-up': 'fadeInUp 0.5s ease-out',
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
             },
             keyframes: {
               fadeIn: {
@@ -43,25 +46,41 @@
       }
     </script>
     <style>
+      body {
+        background-color: #1A1625;
+        color: #FCE7F3;
+      }
       /* Custom scrollbar for Webkit */
       ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
+        width: 10px;
+        height: 10px;
       }
       ::-webkit-scrollbar-track {
-        background: #020617; 
+        background: #1A1625; 
       }
       ::-webkit-scrollbar-thumb {
-        background: #334155; 
-        border-radius: 4px;
+        background: #4a3b5c; 
+        border-radius: 5px;
+        border: 2px solid #1A1625;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #10b981; 
+        background: #F5317F; 
       }
+      
       .glass-panel {
-        background: rgba(15, 23, 42, 0.7);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        background: rgba(42, 36, 56, 0.6);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(245, 49, 127, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      }
+      
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      }
+      
+      .text-glow {
+        text-shadow: 0 0 10px rgba(245, 49, 127, 0.5);
       }
     </style>
   <script type="importmap">
@@ -74,8 +93,7 @@
 }
 </script>
 </head>
-  <body class="bg-brand-darker text-brand-light font-sans antialiased selection:bg-brand-primary selection:text-brand-darker">
+  <body class="font-sans antialiased selection:bg-brand-primary selection:text-white">
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
   </body>
 </html>

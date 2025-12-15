@@ -100,14 +100,14 @@ export const MOCK_HEADLINE_SIDE = [
     {
         id: 'hs2',
         category: '漢化更新',
-        categoryColor: 'text-brand-accent',
+        categoryColor: 'text-brand-secondary',
         title: '美少女萬華鏡 -理與迷宮的少女- 官方中文修正補丁釋出',
         imageUrl: 'https://picsum.photos/id/104/200/150'
     },
     {
         id: 'hs3',
         category: '社群投稿',
-        categoryColor: 'text-blue-400',
+        categoryColor: 'text-brand-accent',
         title: '[教學] 如何使用 Cheat Engine 修改《柏德之門 3》好感度數值',
         imageUrl: 'https://picsum.photos/id/106/200/150'
     },
@@ -322,7 +322,7 @@ export const MOCK_LATEST_NEWS: LatestNewsItem[] = [
         title: '《NtRIdol: Déjà Vu》地下偶像的命運，由你鏡頭下的私生活決定',
         imageUrl: 'https://i.meee.com.tw/VTCnH24.png',
         category: '紳士專區',
-        categoryColor: 'bg-red-600',
+        categoryColor: 'bg-brand-primary',
         timeAgo: '1 小時前',
         likes: 1240,
         comments: 356
@@ -342,7 +342,7 @@ export const MOCK_LATEST_NEWS: LatestNewsItem[] = [
         title: '《雀姬》x《與經紀人戀愛是絕對禁止 II》聯動確認！限定角色登場',
         imageUrl: 'https://i.meee.com.tw/SOMl9Fs.jpg',
         category: '活動',
-        categoryColor: 'bg-purple-600',
+        categoryColor: 'bg-brand-secondary',
         timeAgo: '4 小時前',
         likes: 2300,
         comments: 560
@@ -362,7 +362,7 @@ export const MOCK_LATEST_NEWS: LatestNewsItem[] = [
         title: '夢幻共演：明星少女們的甜蜜假期，跨作品聯合活動開跑',
         imageUrl: 'https://i.meee.com.tw/lYrqojK.jpg',
         category: '活動',
-        categoryColor: 'bg-purple-600',
+        categoryColor: 'bg-brand-secondary',
         timeAgo: '6 小時前',
         likes: 1500,
         comments: 300
@@ -382,7 +382,7 @@ export const MOCK_LATEST_NEWS: LatestNewsItem[] = [
         title: 'NVIDIA RTX 5090 規格傳聞流出：記憶體頻寬提升 50%',
         imageUrl: 'https://picsum.photos/id/24/400/225',
         category: '硬體',
-        categoryColor: 'bg-gray-600',
+        categoryColor: 'bg-slate-600',
         timeAgo: '3 天前',
         likes: 56,
         comments: 12
@@ -392,7 +392,7 @@ export const MOCK_LATEST_NEWS: LatestNewsItem[] = [
         title: 'I社復活？全新成人遊戲品牌 Illgames 發表首款大作',
         imageUrl: 'https://picsum.photos/id/30/400/225',
         category: 'R18',
-        categoryColor: 'bg-red-600',
+        categoryColor: 'bg-brand-primary',
         timeAgo: '3 天前',
         likes: 2100,
         comments: 450

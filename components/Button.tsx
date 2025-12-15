@@ -14,19 +14,27 @@ export const Button: React.FC<ButtonProps> = ({
   className = '',
   ...props 
 }) => {
-  const baseStyle = "inline-flex items-center justify-center font-bold rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-brand-darker";
+  // Base style: Fully rounded (pill shape), bold font
+  const baseStyle = "inline-flex items-center justify-center font-bold rounded-full transition-all duration-300 focus:outline-none transform active:scale-95";
   
   const variants = {
-    primary: "bg-brand-primary text-brand-darker hover:bg-emerald-400 focus:ring-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_rgba(16,185,129,0.5)]",
-    outline: "border border-slate-600 text-brand-light hover:bg-slate-800 hover:border-slate-500 focus:ring-slate-500",
-    accent: "bg-brand-accent text-white hover:bg-fuchsia-600 focus:ring-fuchsia-500 shadow-[0_0_15px_rgba(217,70,239,0.3)]",
-    ghost: "bg-transparent text-slate-400 hover:text-brand-primary hover:bg-slate-800/50"
+    // Gradient Pink to Purple with Glow
+    primary: "bg-gradient-to-r from-brand-primary to-brand-secondary text-white hover:shadow-[0_0_20px_rgba(245,49,127,0.6)] border border-transparent hover:brightness-110",
+    
+    // Border with pink glow on hover
+    outline: "border-2 border-slate-600 text-brand-light hover:border-brand-primary hover:text-brand-primary hover:shadow-[0_0_15px_rgba(245,49,127,0.3)] bg-transparent",
+    
+    // Cyan accent for high contrast actions
+    accent: "bg-brand-accent text-brand-darker hover:bg-cyan-300 shadow-[0_0_15px_rgba(0,240,255,0.4)] hover:shadow-[0_0_25px_rgba(0,240,255,0.6)]",
+    
+    // Ghost with subtle hover
+    ghost: "bg-transparent text-slate-400 hover:text-brand-primary hover:bg-brand-primary/10"
   };
 
   const sizes = {
-    sm: "text-xs px-3 py-1.5 gap-1.5",
-    md: "text-sm px-5 py-2.5 gap-2",
-    lg: "text-base px-8 py-3.5 gap-2.5"
+    sm: "text-xs px-4 py-1.5 gap-1.5",
+    md: "text-sm px-6 py-2.5 gap-2",
+    lg: "text-base px-10 py-3.5 gap-2.5"
   };
 
   return (
