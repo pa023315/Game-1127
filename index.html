@@ -4,40 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game Patch Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-    <script>
-      window.tailwind = window.tailwind || {};
-      window.tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                dark: '#2A2438',
-                darker: '#1A1625',
-                light: '#FCE7F3',
-                primary: '#F5317F',
-                secondary: '#B845FF',
-                accent: '#00F0FF',
-                surface: '#231e32',
-              },
-            },
-          },
-        },
-      };
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-    <style>
-      body { background-color: #1A1625; color: #FCE7F3; }
-    </style>
-  </head>
-
-  <body class="font-sans antialiased">
-    <main class="max-w-3xl mx-auto p-8">
-      <h1 class="text-3xl font-bold">Game Patch Hub</h1>
-      <p class="mt-3 opacity-80">如果你看到這段文字，代表 Zeabur 靜態部署正常。</p>
-    </main>
+</head>
+  <body class="font-sans antialiased selection:bg-brand-primary selection:text-white bg-[#0f0e13] text-slate-200">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
