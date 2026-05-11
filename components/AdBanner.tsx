@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export const AdBanner: React.FC = () => {
@@ -16,21 +15,14 @@ export const AdBanner: React.FC = () => {
             className="w-full h-auto object-cover group-hover:brightness-110 group-hover:scale-[1.01] transition-all duration-500"
         />
         
-        {/* Shine Effect Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] pointer-events-none"></div>
+        {/* Shine Effect Overlay using Tailwind config */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer pointer-events-none"></div>
         
         {/* Optional Label */}
         <div className="absolute bottom-2 right-2 bg-black/50 text-[10px] text-slate-400 px-1 rounded backdrop-blur-sm">
             AD
         </div>
       </a>
-      <style>{`
-        @keyframes shimmer {
-          100% {
-            transform: translateX(100%);
-          }
-        }
-      `}</style>
     </div>
   );
 };

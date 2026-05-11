@@ -2,63 +2,70 @@
 import React from 'react';
 
 export const Footer: React.FC = () => {
-  return (
-    <footer className="relative z-10 bg-black border-t border-slate-800 pt-16 pb-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          
-          <div className="col-span-1">
-            <a href="#" className="flex items-center gap-2 mb-4 group">
-                <div className="w-8 h-8 bg-slate-800 rounded flex items-center justify-center font-bold text-white group-hover:bg-brand-primary group-hover:text-slate-900 transition">P</div>
-                <span className="text-xl font-bold tracking-tight text-white">PATCH<span className="text-slate-500 group-hover:text-white transition">HUB</span></span>
-            </a>
-            <p className="text-slate-500 text-sm leading-relaxed mb-6">
-              專注於成人遊戲的優化與漢化社群。致力於提供安全、高速、高品質的補丁資源。
-            </p>
-            <div className="flex gap-4">
-                <a href="#" className="w-8 h-8 rounded bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-brand-primary hover:text-slate-900 transition"><i className="fab fa-discord"></i></a>
-                <a href="#" className="w-8 h-8 rounded bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-brand-primary hover:text-slate-900 transition"><i className="fab fa-twitter"></i></a>
-                <a href="#" className="w-8 h-8 rounded bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-brand-primary hover:text-slate-900 transition"><i className="fab fa-patreon"></i></a>
+    return (
+        <footer className="relative z-10 bg-[#16161d] pt-16 pb-16 border-t border-[#2a2932]">
+            <div className="container mx-auto px-4 max-w-7xl">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
+                    
+                    {/* Brand */}
+                    <div className="col-span-1 md:col-span-4">
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="w-10 h-10 bg-[#cdab53] rounded flex items-center justify-center font-bold text-white text-xl">
+                                H
+                            </div>
+                            <div className="flex items-baseline gap-2">
+                                <span className="text-2xl font-bold text-white tracking-wide">Hgamer</span>
+                                <span className="text-2xl font-bold text-[#cdab53]" style={{ fontFamily: '"Noto Sans TC", sans-serif' }}>紳士玩家</span>
+                            </div>
+                        </div>
+                        <p className="text-[15px] text-slate-300 leading-relaxed mb-6 max-w-sm">
+                            提供最完整的成人遊戲&小黃遊遊戲心得與評測，致力於為玩家帶來最佳遊戲體驗。
+                        </p>
+                        <div className="flex gap-3">
+                            <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-slate-300 hover:bg-[#cdab53] hover:text-white transition"><i className="fab fa-x-twitter text-sm"></i></a>
+                            <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-slate-300 hover:bg-[#cdab53] hover:text-white transition"><i className="fab fa-discord text-sm"></i></a>
+                        </div>
+                    </div>
+
+                    {/* Navigation */}
+                    <div className="col-span-1 md:col-span-2 md:col-start-6">
+                        <h3 className="text-white font-bold mb-6 tracking-wider text-[15px]">網站導覽</h3>
+                        <ul className="space-y-4 text-[15px] text-slate-300">
+                            <li><a href="#" className="hover:text-[#cdab53] transition">首頁</a></li>
+                            <li><a href="#" className="hover:text-[#cdab53] transition">新聞</a></li>
+                            <li><a href="#" className="hover:text-[#cdab53] transition">補丁資源</a></li>
+                        </ul>
+                    </div>
+
+                    {/* Support */}
+                    <div className="col-span-1 md:col-span-2">
+                        <h3 className="text-white font-bold mb-6 tracking-wider text-[15px]">支援</h3>
+                        <ul className="space-y-4 text-[15px] text-slate-300">
+                            <li><a href="#" className="hover:text-white transition">常見問題</a></li>
+                            <li><a href="#" className="hover:text-white transition">使用條款</a></li>
+                            <li><a href="#" className="hover:text-white transition">隱私政策</a></li>
+                            <li><a href="#" className="hover:text-white transition">聯絡我們</a></li>
+                        </ul>
+                    </div>
+
+                    {/* Newsletter */}
+                    <div className="col-span-1 md:col-span-3">
+                        <h3 className="text-white font-bold mb-6 tracking-wider text-[15px]">訂閱電子報</h3>
+                        <p className="text-[15px] text-slate-300 mb-4">獲取最新成人遊戲&小黃遊資訊</p>
+                        <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
+                            <input 
+                                type="email" 
+                                placeholder="Email" 
+                                className="w-full bg-[#302f3a] border border-transparent text-white text-[15px] rounded px-4 py-2 outline-none focus:border-[#cdab53] transition" 
+                            />
+                            <button className="bg-[#cdab53] hover:brightness-110 text-white text-[15px] font-bold px-5 py-2 rounded transition whitespace-nowrap">
+                                訂閱
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
             </div>
-          </div>
-
-          <div>
-            <h3 className="text-white font-bold mb-4">網站導覽</h3>
-            <ul className="space-y-2 text-sm text-slate-400">
-                <li><a href="#" className="hover:text-brand-primary transition">最新新聞</a></li>
-                <li><a href="#" className="hover:text-brand-primary transition">補丁資料庫</a></li>
-                <li><a href="#" className="hover:text-brand-primary transition">會員福利活動</a></li>
-                <li><a href="#" className="hover:text-brand-primary transition">RSS 訂閱</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-white font-bold mb-4">支援與規範</h3>
-            <ul className="space-y-2 text-sm text-slate-400">
-                <li><a href="#" className="hover:text-white transition">常見問題 (FAQ)</a></li>
-                <li><a href="#" className="hover:text-white transition">補丁安裝教學</a></li>
-                <li><a href="#" className="hover:text-white transition">服務條款</a></li>
-                <li><a href="#" className="hover:text-white transition">隱私權政策</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-white font-bold mb-4">每週精選</h3>
-            <p className="text-xs text-slate-500 mb-4">輸入信箱，接收本週最新的漢化情報。</p>
-            <form className="flex flex-col gap-2" onSubmit={(e) => e.preventDefault()}>
-                <input type="email" placeholder="Email" className="bg-slate-900 border border-slate-700 text-white text-sm rounded px-3 py-2 outline-none focus:border-brand-primary transition" />
-                <button className="bg-slate-800 hover:bg-brand-primary hover:text-slate-900 text-white text-sm font-bold py-2 rounded transition">訂閱</button>
-            </form>
-          </div>
-        </div>
-
-        <div className="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-xs text-slate-600">© 2024 PatchHub. All rights reserved. 18+</p>
-            <div className="flex gap-6 text-xs text-slate-600">
-                <span>Designed for Gamers</span>
-            </div>
-        </div>
-      </div>
-    </footer>
-  );
+        </footer>
+    );
 };

@@ -1,15 +1,13 @@
-
 import React from 'react';
 import { MOCK_NEWS, MOCK_PATCHES } from '../types';
 import { Button } from '../components/Button';
 
 interface NewsDetailProps {
-    onNavigate: (page: any) => void; // Using any for simplicity in circular dep scenario or string based nav
     onShowToast: (msg: string, type?: 'success' | 'info') => void;
     onBack: () => void;
 }
 
-export const NewsDetail: React.FC<NewsDetailProps> = ({ onNavigate, onShowToast, onBack }) => {
+export const NewsDetail: React.FC<NewsDetailProps> = ({ onShowToast, onBack }) => {
     // Mocking specific article data
     const article = {
         title: '《電馭叛客 2077》「夜之城無修版」Mod v4.0 深度評測：這才是完整的體驗',
@@ -25,7 +23,7 @@ export const NewsDetail: React.FC<NewsDetailProps> = ({ onNavigate, onShowToast,
     const relatedNews = MOCK_NEWS.slice(1, 4);
 
     return (
-        <div className="container mx-auto px-4 py-8 animate-fade-in min-h-screen">
+        <div className="container mx-auto px-4 py-8 animate-fade-in min-h-screen pt-24">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
                 
                 {/* Main Content (Left) */}

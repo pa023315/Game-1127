@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '../components/Button';
 
@@ -19,7 +18,7 @@ export const SignUp: React.FC<SignUpProps> = ({ onLogin, onShowToast }) => {
   };
 
   return (
-    <div className="relative flex-grow flex items-center justify-center py-20 px-4 min-h-[calc(100vh-64px)] animate-fade-in">
+    <div className="relative flex-grow flex items-center justify-center py-20 px-4 min-h-[calc(100vh-64px)] animate-fade-in pt-20">
         
         {/* Fixed Background Layers for this page */}
         <div className="fixed inset-0 bg-[url('https://picsum.photos/id/180/1920/1080')] bg-cover bg-center bg-no-repeat z-0 pointer-events-none"></div>

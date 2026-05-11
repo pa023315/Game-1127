@@ -1,131 +1,101 @@
+import React, { useState, useEffect } from 'react';
 
-import React, { useState, useEffect, useCallback } from 'react';
-
-interface Slide {
-  id: number;
-  image: string;
-}
-
-const SLIDES: Slide[] = [
-  {
-    id: 0,
-    image: 'https://i.meee.com.tw/SOMl9Fs.jpg',
-  },
+const SLIDES = [
   {
     id: 1,
-    image: 'https://i.meee.com.tw/abwNbM5.jpg',
+    image: 'https://i.meee.com.tw/SOMl9Fs.jpg',
+    category: '專題報導',
+    title: '雙女主陷陣！\n《N・T・Resortへようこそ》',
+    subtitle: '老舖社團 NTR 新作今夏推出',
+    color: 'bg-brand-primary'
   },
   {
     id: 2,
-    image: 'https://i.meee.com.tw/sC1RzJj.png',
+    image: 'https://i.meee.com.tw/abwNbM5.jpg',
+    category: '重大更新',
+    title: '夏色四葉草 v2.0\n新增 DLC 劇情與全語音',
+    subtitle: '現已開放下載',
+    color: 'bg-brand-accent'
   },
   {
     id: 3,
     image: 'https://i.meee.com.tw/VTCnH24.png',
+    category: '模組推薦',
+    title: 'NtRIdol: Déjà Vu\n地下偶像的秘密生活',
+    subtitle: '4K 高畫質材質包',
+    color: 'bg-brand-secondary'
   }
 ];
 
 export const Hero: React.FC = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  const nextSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
-  }, []);
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + SLIDES.length) % SLIDES.length);
-  };
+  const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    if (isPaused) return;
-    const interval = setInterval(nextSlide, 6000); 
-    return () => clearInterval(interval);
-  }, [nextSlide, isPaused]);
+    const timer = setInterval(() => {
+        setCurrent(prev => (prev + 1) % SLIDES.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const handlePrev = () => setCurrent(prev => (prev - 1 + SLIDES.length) % SLIDES.length);
+  const handleNext = () => setCurrent(prev => (prev + 1) % SLIDES.length);
 
   return (
-    // 1. Parent Container
-    // Use flex justify-center to keep the structure balanced
-    <div className="relative w-full h-[450px] md:h-[500px] bg-[#13111C] flex justify-center items-stretch overflow-hidden shadow-2xl z-20 border-b border-white/5">
-      
-      {/* 2. Left Ad Column - Fixed Width Strategy */}
-      <div className="hidden lg:flex shrink-0 w-[160px] xl:w-[240px] h-full items-start justify-end relative z-0 bg-[#13111C]">
-         <img 
-            src="https://i.meee.com.tw/FqPAOPl.png" 
-            alt="Ad Left"
-            className="w-full h-full object-cover object-top opacity-80 hover:opacity-100 transition duration-700"
-         />
-         {/* Vignette Overlay for Ad only */}
-         <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent pointer-events-none"></div>
-      </div>
+    <div className="relative w-full aspect-[16/9] md:aspect-[21/9] lg:aspect-[16/10] overflow-hidden group rounded-md">
+        
+        {SLIDES.map((slide, idx) => (
+            <div 
+                key={slide.id}
+                className={`absolute inset-0 transition-opacity duration-1000 ${idx === current ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+            >
+                {/* Image */}
+                <div className="absolute inset-0 bg-black">
+                    <img 
+                        src={slide.image} 
+                        alt={slide.title} 
+                        className={`w-full h-full object-cover transition-transform duration-[8000ms] ease-out ${idx === current ? 'scale-105' : 'scale-100'} opacity-80`}
+                    />
+                </div>
+                
+                {/* Overlay Gradients */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#121212]/80 via-transparent to-transparent"></div>
 
-      {/* 3. Center Hero Banner - Fluid Strategy */}
-      <div 
-        className="relative flex-1 w-full max-w-[900px] xl:max-w-[1200px] h-full group overflow-hidden z-20 bg-brand-darker shadow-[0_0_50px_rgba(0,0,0,0.5)]"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-      >
-        {/* Slides */}
-        {SLIDES.map((slide, index) => (
-          <div 
-            key={slide.id}
-            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-              index === currentSlide ? 'opacity-100 z-10 scale-100' : 'opacity-0 z-0 scale-105'
-            }`}
-          >
-            {/* Background Image - Clean, No Gradients */}
-            <div className="absolute inset-0">
-              <img 
-                src={slide.image} 
-                alt={`Slide ${index + 1}`} 
-                className="w-full h-full object-cover"
-              />
+                {/* Content */}
+                <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+                    <div className={`max-w-2xl transition-all duration-700 transform ${idx === current ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
+                        <div className={`inline-block px-2 py-0.5 mb-3 text-[11px] font-bold text-white rounded-sm ${slide.color}`}>
+                            {slide.category}
+                        </div>
+                        <h2 className="text-2xl md:text-4xl font-black text-white mb-2 leading-tight whitespace-pre-line text-shadow">
+                            {slide.title}
+                        </h2>
+                        <p className="text-sm md:text-lg text-white font-medium max-w-lg leading-relaxed text-shadow">
+                            {slide.subtitle}
+                        </p>
+                    </div>
+                </div>
             </div>
-            
-            {/* Text Content Removed as requested */}
-          </div>
         ))}
 
-        {/* Navigation Arrows */}
-        <div className="absolute right-4 bottom-4 md:right-8 md:bottom-8 flex gap-3 z-30">
-          <button 
-              onClick={prevSlide}
-              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-brand-primary hover:border-brand-primary transition-all duration-300 shadow-lg"
-          >
-              <i className="fas fa-chevron-left"></i>
-          </button>
-          <button 
-              onClick={nextSlide}
-              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-brand-primary hover:border-brand-primary transition-all duration-300 shadow-lg"
-          >
-              <i className="fas fa-chevron-right"></i>
-          </button>
-        </div>
+        {/* Arrows */}
+        <button onClick={handlePrev} className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 flex items-center justify-center text-white/50 hover:text-white text-3xl transition">
+            <i className="fas fa-angle-left"></i>
+        </button>
+        <button onClick={handleNext} className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 flex items-center justify-center text-white/50 hover:text-white text-3xl transition">
+            <i className="fas fa-angle-right"></i>
+        </button>
 
-        {/* Progress Indicators */}
-        <div className="absolute bottom-0 left-0 w-full flex z-30">
-            {SLIDES.map((_, index) => (
-               <div key={index} className="flex-1 h-1 bg-white/10">
-                   <div 
-                      className={`h-full bg-brand-primary transition-all duration-[6000ms] linear ${index === currentSlide && !isPaused ? 'w-full' : 'w-0'}`}
-                      style={{ transitionProperty: 'width' }}
-                   ></div>
-               </div>
+        {/* Indicators */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+            {SLIDES.map((_, idx) => (
+                <button 
+                    key={idx}
+                    onClick={() => setCurrent(idx)}
+                    className={`h-2.5 rounded-full transition-all duration-300 ${idx === current ? 'w-2.5 bg-[#e63946]' : 'w-2.5 bg-white/40 hover:bg-white/60'}`}
+                />
             ))}
         </div>
-      </div>
-
-      {/* 4. Right Ad Column - Fixed Width Strategy */}
-      <div className="hidden lg:flex shrink-0 w-[160px] xl:w-[240px] h-full items-start justify-start relative z-0 bg-[#13111C]">
-         <img 
-            src="https://i.meee.com.tw/FqPAOPl.png" 
-            alt="Ad Right"
-            className="w-full h-full object-cover object-top opacity-80 hover:opacity-100 transition duration-700"
-         />
-         {/* Vignette Overlay for Ad only */}
-         <div className="absolute inset-0 bg-gradient-to-l from-black/60 to-transparent pointer-events-none"></div>
-      </div>
-      
     </div>
   );
 };

@@ -1,6 +1,4 @@
-
 import React from 'react';
-import { Button } from '../components/Button';
 
 interface DashboardProps {
     onShowToast: (msg: string, type?: 'success' | 'info') => void;
@@ -8,7 +6,7 @@ interface DashboardProps {
 
 export const Dashboard: React.FC<DashboardProps> = ({ onShowToast }) => {
   return (
-    <div className="flex-grow flex flex-col relative bg-[url('https://picsum.photos/id/180/1920/1080')] bg-fixed bg-cover animate-fade-in">
+    <div className="flex-grow flex flex-col relative bg-[url('https://picsum.photos/id/180/1920/1080')] bg-fixed bg-cover animate-fade-in pt-20">
         <div className="absolute inset-0 bg-slate-950/90 pointer-events-none"></div>
 
         <main className="container mx-auto px-4 py-8 flex-grow relative z-10">

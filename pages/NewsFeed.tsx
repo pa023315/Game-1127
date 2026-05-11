@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { MOCK_NEWS, MOCK_HEADLINE_MAIN, MOCK_HEADLINE_SIDE } from '../types';
 import { Button } from '../components/Button';
@@ -40,7 +39,7 @@ export const NewsFeed: React.FC<NewsFeedProps> = ({ onShowToast, onNavigateDetai
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 animate-fade-in">
+    <div className="container mx-auto px-4 py-8 animate-fade-in pt-24">
       
       {/* 1. 焦點頭條 Hero Section */}
       <section className="mb-12">

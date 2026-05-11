@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '../components/Button';
 import { MOCK_GAME_DETAIL, MOCK_NEWS } from '../types';
@@ -18,10 +17,10 @@ export const GamePatchDetail: React.FC<GamePatchDetailProps> = ({ onBack, onShow
   };
 
   return (
-    <div className="animate-fade-in min-h-screen pb-12">
+    <div className="animate-fade-in min-h-screen pb-12 pt-20">
         
-        {/* Sticky Sub-nav */}
-        <nav className="sticky top-16 z-40 bg-slate-900/90 backdrop-blur border-b border-white/5 py-3 shadow-lg">
+        {/* Sticky Sub-nav (Adjusted top position for new layout) */}
+        <nav className="sticky top-20 z-40 bg-slate-900/90 backdrop-blur border-b border-white/5 py-3 shadow-lg">
              <div className="container mx-auto px-4 max-w-5xl flex items-center gap-2 text-sm">
                 <button onClick={onBack} className="text-slate-500 hover:text-white transition">補丁資料庫</button>
                 <span className="text-slate-600">/</span>

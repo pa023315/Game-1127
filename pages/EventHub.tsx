@@ -1,9 +1,7 @@
-
 import React, { useState } from 'react';
-import { MOCK_EVENTS, EventItem } from '../types';
+import { MOCK_EVENTS } from '../types';
 import { EventCard } from '../components/EventCard';
 import { StickyAuthBar } from '../components/StickyAuthBar';
-import { Button } from '../components/Button';
 
 interface EventHubProps {
     onShowToast: (msg: string, type?: 'success' | 'info') => void;
@@ -16,12 +14,12 @@ export const EventHub: React.FC<EventHubProps> = ({ onShowToast }) => {
     ? MOCK_EVENTS 
     : MOCK_EVENTS.filter(e => e.type === filter);
 
-  const handleJoinEvent = (id: string) => {
+  const handleJoinEvent = (_id: string) => {
       onShowToast('請先登入會員以參加此活動。', 'info');
   };
 
   return (
-    <div className="min-h-screen bg-brand-darker pb-24">
+    <div className="min-h-screen bg-brand-darker pb-24 pt-20">
         
         {/* Hero Section */}
         <section className="relative py-20 bg-[url('https://picsum.photos/id/45/1920/600')] bg-cover bg-center border-b border-slate-800">

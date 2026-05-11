@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Page } from './types';
 import { Navbar } from './components/Navbar';
@@ -12,11 +11,11 @@ import { GamePatchDetail } from './pages/GamePatchDetail';
 import { NewsDetail } from './pages/NewsDetail';
 import { SignUp } from './pages/SignUp';
 import { Dashboard } from './pages/Dashboard';
+import { ReviewFeed } from './pages/ReviewFeed';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>(Page.HOME);
-  // State to simulate routing parameter (e.g. /game/:id)
-  const [selectedGameId, setSelectedGameId] = useState<string | null>(null);
+  const [, setSelectedGameId] = useState<string | null>(null);
   const [toast, setToast] = useState<{msg: string, type: 'success' | 'info'} | null>(null);
 
   const showToast = (msg: string, type: 'success' | 'info' = 'success') => {
@@ -43,8 +42,10 @@ const App: React.FC = () => {
         return <Home onShowToast={showToast} />;
       case Page.NEWS:
         return <NewsFeed onShowToast={showToast} onNavigateDetail={() => handleNavigate(Page.NEWS_DETAIL)} />;
+      case Page.REVIEWS:
+        return <ReviewFeed onShowToast={showToast} onNavigateDetail={() => handleNavigate(Page.NEWS_DETAIL)} />;
       case Page.NEWS_DETAIL:
-        return <NewsDetail onNavigate={handleNavigate} onShowToast={showToast} onBack={() => handleNavigate(Page.NEWS)} />;
+        return <NewsDetail onShowToast={showToast} onBack={() => handleNavigate(Page.NEWS)} />;
       case Page.PATCHES:
         return <PatchLibrary onShowToast={showToast} onNavigateToDetail={navigateToGameDetail} />;
       case Page.GAME_DETAIL:
@@ -61,7 +62,8 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-brand-darker font-sans text-brand-light pt-16 relative overflow-x-hidden">
+    // Removed pt-16 to allow Hero on Home page to sit behind transparent navbar
+    <div className="min-h-screen flex flex-col bg-brand-darker font-sans text-brand-light relative overflow-x-hidden">
       
       <Navbar activePage={currentPage} onNavigate={handleNavigate} />
       

@@ -1,21 +1,19 @@
-
 import React, { useState } from 'react';
 import { MOCK_PATCHES } from '../types';
-import { Button } from '../components/Button';
 
 interface PatchLibraryProps {
     onNavigateToDetail: (id: string) => void;
     onShowToast: (msg: string, type?: 'success' | 'info') => void;
 }
 
-export const PatchLibrary: React.FC<PatchLibraryProps> = ({ onNavigateToDetail, onShowToast }) => {
+export const PatchLibrary: React.FC<PatchLibraryProps> = ({ onNavigateToDetail }) => {
   const [sort, setSort] = useState('更新時間');
   
   // Fake "Hot" Data
   const hotPatches = MOCK_PATCHES.slice(0, 4);
 
   return (
-    <div className="container mx-auto px-4 py-8 animate-fade-in min-h-screen">
+    <div className="container mx-auto px-4 py-8 animate-fade-in min-h-screen pt-24">
        
        {/* 1. 頂部篩選器 (Filter Bar) */}
        <div className="bg-slate-900 border border-slate-700 rounded-lg p-4 mb-12 flex flex-col md:flex-row gap-4 items-center justify-between shadow-lg">
