@@ -45,7 +45,7 @@ export const Home: React.FC<HomeProps> = ({ onShowToast }) => {
                                             {news.title}
                                         </h3>
                                         <div className="text-xs text-slate-500 flex items-center gap-1 font-mono">
-                                            <i className="far fa-clock"></i> 2026-05-05 13:50
+                                            <i className="far fa-clock"></i> 2026-05-05
                                         </div>
                                     </div>
                                 </div>

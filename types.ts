@@ -2,7 +2,6 @@
 export enum Page {
   HOME = 'HOME',
   NEWS = 'NEWS',
-  REVIEWS = 'REVIEWS',
   PATCHES = 'PATCHES', // Maps to PatchLibrary
   GAME_DETAIL = 'GAME_DETAIL', // New Detail Page
   SUBSCRIBE = 'SUBSCRIBE', // Maps to EventHub (formerly CampaignLanding)

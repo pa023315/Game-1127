@@ -49,7 +49,6 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
         <nav className="hidden lg:flex items-center gap-8 translate-x-10">
             {[
                 { page: Page.NEWS, label: '新聞' },
-                { page: Page.REVIEWS, label: '評測' },
                 { page: Page.PATCHES, label: '補丁' },
                 { page: Page.SUBSCRIBE, label: '好康福利' },
             ].map((item, idx) => (
@@ -92,7 +91,6 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
              <div className="flex flex-col p-4 gap-2">
                  {[
                     { page: Page.NEWS, label: '新聞' },
-                    { page: Page.REVIEWS, label: '評測' },
                     { page: Page.PATCHES, label: '補丁' },
                     { page: Page.SUBSCRIBE, label: '好康福利' },
                  ].map((item, idx) => (

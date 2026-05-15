@@ -11,7 +11,6 @@ import { GamePatchDetail } from './pages/GamePatchDetail';
 import { NewsDetail } from './pages/NewsDetail';
 import { SignUp } from './pages/SignUp';
 import { Dashboard } from './pages/Dashboard';
-import { ReviewFeed } from './pages/ReviewFeed';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>(Page.HOME);
@@ -42,8 +41,6 @@ const App: React.FC = () => {
         return <Home onShowToast={showToast} />;
       case Page.NEWS:
         return <NewsFeed onShowToast={showToast} onNavigateDetail={() => handleNavigate(Page.NEWS_DETAIL)} />;
-      case Page.REVIEWS:
-        return <ReviewFeed onShowToast={showToast} onNavigateDetail={() => handleNavigate(Page.NEWS_DETAIL)} />;
       case Page.NEWS_DETAIL:
         return <NewsDetail onShowToast={showToast} onBack={() => handleNavigate(Page.NEWS)} />;
       case Page.PATCHES:
