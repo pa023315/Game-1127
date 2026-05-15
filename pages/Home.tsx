@@ -4,9 +4,11 @@ import { MOCK_PATCHES, MOCK_LATEST_NEWS } from '../types';
 
 interface HomeProps {
     onShowToast: (msg: string, type?: 'success' | 'info') => void;
+    onNavigateDetail?: () => void;
+    onNavigateNews?: () => void;
 }
 
-export const Home: React.FC<HomeProps> = ({ onShowToast }) => {
+export const Home: React.FC<HomeProps> = ({ onShowToast, onNavigateDetail, onNavigateNews }) => {
 
   return (
     <div className="min-h-screen pt-24 pb-20">
@@ -27,13 +29,13 @@ export const Home: React.FC<HomeProps> = ({ onShowToast }) => {
                                 <i className="fas fa-paperclip text-brand-primary transform -rotate-45 text-lg"></i>
                                 新聞快訊
                             </h2>
-                            <button className="text-sm text-gray-400 hover:text-brand-primary transition flex items-center gap-1 font-bold">更多 <i className="fas fa-chevron-right text-[10px]"></i></button>
+                            <button onClick={onNavigateNews} className="text-sm text-gray-400 hover:text-brand-primary transition flex items-center gap-1 font-bold">更多 <i className="fas fa-chevron-right text-[10px]"></i></button>
                         </div>
 
                         {/* Feed */}
                         <div className="p-4 space-y-4">
                             {MOCK_LATEST_NEWS.map(news => (
-                                <div key={news.id} onClick={() => onShowToast('閱讀文章...', 'info')} className="group flex flex-col md:flex-row gap-4 bg-brand-card rounded-md p-1 hover:bg-gray-50 transition cursor-pointer border-l-2 border-transparent hover:border-brand-primary">
+                                <div key={news.id} onClick={onNavigateDetail || (() => onShowToast('閱讀文章...', 'info'))} className="group flex flex-col md:flex-row gap-4 bg-brand-card rounded-md p-1 hover:bg-gray-50 transition cursor-pointer border-l-2 border-transparent hover:border-brand-primary">
                                     <div className="w-full md:w-56 aspect-[16/9] rounded-sm overflow-hidden shrink-0 relative bg-gray-100 border border-gray-100">
                                         <img src={news.imageUrl} alt={news.title} className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
                                     </div>
@@ -51,7 +53,7 @@ export const Home: React.FC<HomeProps> = ({ onShowToast }) => {
                                 </div>
                             )).slice(0, 5)}
                             
-                            <button className="w-full py-4 mt-2 bg-gray-50 hover:bg-gray-100 transition text-gray-600 text-sm font-bold rounded-md border border-gray-100">
+                            <button onClick={onNavigateNews} className="w-full py-4 mt-2 bg-gray-50 hover:bg-gray-100 transition text-gray-600 text-sm font-bold rounded-md border border-gray-100">
                                 閱讀更多新聞 <i className="fas fa-chevron-right ml-1 text-[10px]"></i>
                             </button>
                         </div>

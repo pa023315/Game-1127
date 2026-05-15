@@ -10,6 +10,7 @@ import { EventHub } from './pages/EventHub';
 import { GamePatchDetail } from './pages/GamePatchDetail';
 import { SignUp } from './pages/SignUp';
 import { Dashboard } from './pages/Dashboard';
+import { NewsDetail } from './pages/NewsDetail';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>(Page.HOME);
@@ -34,12 +35,14 @@ const App: React.FC = () => {
       window.scrollTo(0, 0);
   };
 
-  const renderPage = () => {
+    const renderPage = () => {
     switch (currentPage) {
       case Page.HOME:
-        return <Home onShowToast={showToast} />;
+        return <Home onShowToast={showToast} onNavigateDetail={() => handleNavigate(Page.NEWS_DETAIL)} onNavigateNews={() => handleNavigate(Page.NEWS)} />;
       case Page.NEWS:
-        return <NewsFeed onShowToast={showToast} onNavigateDetail={() => showToast('此頁面已被移除', 'info')} />;
+        return <NewsFeed onShowToast={showToast} onNavigateDetail={() => handleNavigate(Page.NEWS_DETAIL)} />;
+      case Page.NEWS_DETAIL:
+        return <NewsDetail onShowToast={showToast} onBack={() => handleNavigate(Page.NEWS)} />;
       case Page.PATCHES:
         return <PatchLibrary onShowToast={showToast} onNavigateToDetail={navigateToGameDetail} />;
       case Page.GAME_DETAIL:
