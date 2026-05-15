@@ -5,7 +5,6 @@ export enum Page {
   PATCHES = 'PATCHES', // Maps to PatchLibrary
   GAME_DETAIL = 'GAME_DETAIL', // New Detail Page
   SUBSCRIBE = 'SUBSCRIBE', // Maps to EventHub (formerly CampaignLanding)
-  NEWS_DETAIL = 'NEWS_DETAIL', // New Article Page
   SIGN_UP = 'SIGN_UP', // New Fullscreen Registration Page
   DASHBOARD = 'DASHBOARD', // User Dashboard
 }
@@ -85,7 +84,7 @@ export const MOCK_HEADLINE_MAIN = {
   title: '《星空 Starfield》必裝 MOD 總整理：UI 優化、畫質提升與成人模組指南',
   summary: 'Bethesda 新作發售首週，社群模組數量已突破 500 個。我們為您精選了 10 款能顯著改善遊戲體驗的核心模組，以及如何安全安裝它們的教學...',
   category: '深度評測',
-  date: '4 小時前',
+  date: '2023-11-20',
   imageUrl: 'https://picsum.photos/id/102/1200/800'
 };
 

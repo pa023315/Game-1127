@@ -11,7 +11,7 @@ export const PromoGrid: React.FC = () => {
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 animate-slide-up">
        {PROMOS.map((item) => (
-          <a key={item.id} href="#" className="group relative h-28 md:h-36 rounded-2xl overflow-hidden border border-white/10 hover:border-brand-primary/50 transition duration-300 shadow-xl">
+          <a key={item.id} href="#" className="group relative h-28 md:h-36 rounded-md overflow-hidden border border-gray-100 shadow-sm hover:border-brand-primary/50 transition duration-300">
              <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition duration-500 group-hover:brightness-50" />
              <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
              <div className="absolute bottom-0 left-0 p-4">

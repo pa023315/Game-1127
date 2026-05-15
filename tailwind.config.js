@@ -26,13 +26,25 @@ export default {
       },
       colors: {
         brand: {
-          dark: '#1A1625',    // Secondary BG
-          darker: '#0f0e13',  // Main BG (Deep Black/Purple)
-          light: '#FCE7F3',   // Text Light
-          primary: '#F5317F', // Hot Pink
-          secondary: '#B845FF', // Purple
-          accent: '#00F0FF',  // Cyan
-          surface: '#1E1B29', // Card BG
+          mainBg: '#F6F0E3',
+          card: '#FFFDF7',
+          primary: '#4F735C',
+          secondary: '#A3B18A',
+          adult: '#A64253',
+          rating: '#B8873A',
+          accent: '#A3B18A',
+        },
+        gray: {
+          50: '#F6F0E3',
+          100: '#E8DCC8',
+          200: '#D8CBB6',
+          300: '#C2B49F',
+          400: '#9B8D78',
+          500: '#7C7164',
+          600: '#61584D',
+          700: '#474139',
+          800: '#332E28',
+          900: '#2E2A24',
         }
       },
       animation: {

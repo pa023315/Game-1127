@@ -12,15 +12,15 @@ html, body, #root {
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f0e13; 
+  background: #FAFAFB; 
 }
 ::-webkit-scrollbar-thumb {
-  background: #2a2438; 
+  background: #E5E7EB; 
   border-radius: 5px;
-  border: 2px solid #0f0e13;
+  border: 2px solid #FAFAFB;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #F5317F; 
+  background: #E85D8F; 
 }
 
 .glass-panel {

@@ -8,7 +8,6 @@ import { NewsFeed } from './pages/NewsFeed';
 import { PatchLibrary } from './pages/PatchLibrary';
 import { EventHub } from './pages/EventHub';
 import { GamePatchDetail } from './pages/GamePatchDetail';
-import { NewsDetail } from './pages/NewsDetail';
 import { SignUp } from './pages/SignUp';
 import { Dashboard } from './pages/Dashboard';
 
@@ -40,9 +39,7 @@ const App: React.FC = () => {
       case Page.HOME:
         return <Home onShowToast={showToast} />;
       case Page.NEWS:
-        return <NewsFeed onShowToast={showToast} onNavigateDetail={() => handleNavigate(Page.NEWS_DETAIL)} />;
-      case Page.NEWS_DETAIL:
-        return <NewsDetail onShowToast={showToast} onBack={() => handleNavigate(Page.NEWS)} />;
+        return <NewsFeed onShowToast={showToast} onNavigateDetail={() => showToast('此頁面已被移除', 'info')} />;
       case Page.PATCHES:
         return <PatchLibrary onShowToast={showToast} onNavigateToDetail={navigateToGameDetail} />;
       case Page.GAME_DETAIL:
@@ -60,7 +57,7 @@ const App: React.FC = () => {
 
   return (
     // Removed pt-16 to allow Hero on Home page to sit behind transparent navbar
-    <div className="min-h-screen flex flex-col bg-brand-darker font-sans text-brand-light relative overflow-x-hidden">
+    <div className="min-h-screen flex flex-col bg-[#FAFAFB] font-sans text-slate-900 relative overflow-x-hidden">
       
       <Navbar activePage={currentPage} onNavigate={handleNavigate} />
       

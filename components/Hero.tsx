@@ -58,8 +58,8 @@ export const Hero: React.FC = () => {
                 </div>
                 
                 {/* Overlay Gradients */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#121212]/80 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-transparent to-transparent"></div>
 
                 {/* Content */}
                 <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
@@ -79,10 +79,10 @@ export const Hero: React.FC = () => {
         ))}
 
         {/* Arrows */}
-        <button onClick={handlePrev} className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 flex items-center justify-center text-white/50 hover:text-white text-3xl transition">
+        <button onClick={handlePrev} className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 flex items-center justify-center text-white/70 hover:text-white text-3xl transition drop-shadow-md">
             <i className="fas fa-angle-left"></i>
         </button>
-        <button onClick={handleNext} className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 flex items-center justify-center text-white/50 hover:text-white text-3xl transition">
+        <button onClick={handleNext} className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 flex items-center justify-center text-white/70 hover:text-white text-3xl transition drop-shadow-md">
             <i className="fas fa-angle-right"></i>
         </button>
 
@@ -92,7 +92,7 @@ export const Hero: React.FC = () => {
                 <button 
                     key={idx}
                     onClick={() => setCurrent(idx)}
-                    className={`h-2.5 rounded-full transition-all duration-300 ${idx === current ? 'w-2.5 bg-[#e63946]' : 'w-2.5 bg-white/40 hover:bg-white/60'}`}
+                    className={`h-2.5 rounded-full transition-all duration-300 ${idx === current ? 'w-2.5 bg-brand-adult' : 'w-2.5 bg-white/40 hover:bg-white/60'}`}
                 />
             ))}
         </div>

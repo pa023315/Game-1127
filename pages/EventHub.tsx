@@ -19,26 +19,26 @@ export const EventHub: React.FC<EventHubProps> = ({ onShowToast }) => {
   };
 
   return (
-    <div className="min-h-screen bg-brand-darker pb-24 pt-20">
+    <div className="min-h-screen pb-24 pt-20">
         
         {/* Hero Section */}
-        <section className="relative py-20 bg-[url('https://picsum.photos/id/45/1920/600')] bg-cover bg-center border-b border-slate-800">
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-darker via-brand-darker/90 to-transparent"></div>
-            <div className="absolute inset-0 bg-brand-darker/60"></div>
+        <section className="relative py-20 bg-[url('https://picsum.photos/id/45/1920/600')] bg-cover bg-center border-b border-gray-200">
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-mainBg via-brand-mainBg/90 to-transparent"></div>
+            <div className="absolute inset-0 bg-brand-mainBg/60"></div>
             
             <div className="container mx-auto px-4 relative z-10 text-center">
                 <div className="inline-block mb-4 animate-fade-in-up">
-                    <span className="bg-brand-accent/20 text-brand-accent border border-brand-accent/50 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest shadow-[0_0_15px_rgba(217,70,239,0.3)]">
+                    <span className="bg-brand-primary/10 text-brand-primary border border-brand-primary/20 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest shadow-sm">
                         Membership Benefits
                     </span>
                 </div>
-                <h1 className="text-4xl md:text-5xl font-black text-white mb-6 animate-fade-in-up">
+                <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 animate-fade-in-up">
                     <i className="fas fa-gift text-brand-primary mr-3"></i> 
                     會員福利活動中心
                 </h1>
-                <p className="text-slate-300 max-w-2xl mx-auto text-lg leading-relaxed mb-8 animate-fade-in-up">
+                <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed mb-8 animate-fade-in-up">
                     每週更新獨家好禮！登入會員即可免費參加抽獎、領取限定補丁或兌換 Steam 序號。<br/>
-                    <span className="text-slate-500 text-sm">我們承諾：所有抽獎活動皆公開透明。</span>
+                    <span className="text-gray-400 text-sm">我們承諾：所有抽獎活動皆公開透明。</span>
                 </p>
 
                 {/* Filter Tabs */}
@@ -54,8 +54,8 @@ export const EventHub: React.FC<EventHubProps> = ({ onShowToast }) => {
                             onClick={() => setFilter(tab.id as any)}
                             className={`px-5 py-2 rounded-full font-bold text-sm transition-all duration-300 border ${
                                 filter === tab.id 
-                                ? 'bg-brand-primary text-brand-darker border-brand-primary shadow-[0_0_15px_rgba(16,185,129,0.4)]'
-                                : 'bg-slate-900/50 text-slate-400 border-slate-700 hover:text-white hover:border-slate-500'
+                                ? 'bg-brand-primary text-white border-brand-primary shadow-sm'
+                                : 'bg-white text-gray-500 border-gray-200 hover:text-gray-900 hover:bg-gray-50'
                             }`}
                         >
                             {tab.label}
@@ -78,7 +78,7 @@ export const EventHub: React.FC<EventHubProps> = ({ onShowToast }) => {
             </div>
 
             {filteredEvents.length === 0 && (
-                <div className="text-center py-20 text-slate-500 bg-slate-900/50 rounded-xl border border-slate-800 border-dashed">
+                <div className="text-center py-20 text-gray-400 bg-gray-50 rounded-xl border border-gray-200 border-dashed">
                     <i className="far fa-folder-open text-4xl mb-4"></i>
                     <p>目前沒有此類型的活動。</p>
                 </div>
@@ -87,12 +87,12 @@ export const EventHub: React.FC<EventHubProps> = ({ onShowToast }) => {
 
         {/* Past Events / Trust Signal (Optional) */}
         <section className="container mx-auto px-4 py-16">
-            <h3 className="text-slate-500 font-bold uppercase text-xs tracking-wider mb-6 text-center">已結束的熱門活動</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 opacity-50 hover:opacity-100 transition duration-500">
+            <h3 className="text-gray-400 font-bold uppercase text-xs tracking-wider mb-6 text-center">已結束的熱門活動</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 opacity-70 hover:opacity-100 transition duration-500">
                 {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="bg-slate-900 p-4 rounded border border-slate-800 grayscale hover:grayscale-0 transition">
-                        <div className="text-xs text-slate-500 mb-2">已截止</div>
-                        <div className="font-bold text-slate-300 text-sm mb-1">《惡靈古堡 4》重製版序號</div>
+                    <div key={i} className="bg-brand-card p-4 rounded border border-gray-200 grayscale hover:grayscale-0 transition shadow-sm">
+                        <div className="text-xs text-gray-500 mb-2">已截止</div>
+                        <div className="font-bold text-gray-700 text-sm mb-1">《惡靈古堡 4》重製版序號</div>
                         <div className="text-xs text-brand-primary">中獎者: Player_{8293+i}</div>
                     </div>
                 ))}
