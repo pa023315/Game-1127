@@ -51,6 +51,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
                 { page: Page.NEWS, label: '新聞' },
                 { page: Page.PATCHES, label: '補丁' },
                 { page: Page.SUBSCRIBE, label: '好康福利' },
+                { page: Page.HOME, label: '關於站長' },
             ].map((item, idx) => (
                 <button 
                     key={idx}
@@ -74,6 +75,14 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
             <button className="w-10 h-10 items-center justify-center rounded-full text-gray-500 hover:text-gray-900 transition">
                 <i className="fas fa-search text-xl"></i>
             </button>
+            <button 
+                onClick={() => handleNav(Page.DASHBOARD)} 
+                className={`hidden lg:flex items-center gap-2 text-sm font-bold transition-colors ${
+                    activePage === Page.DASHBOARD ? 'text-brand-primary' : 'text-gray-500 hover:text-brand-primary'
+                }`}
+            >
+                <i className="fas fa-user-circle text-xl"></i> 會員中心
+            </button>
             
             {/* Mobile Toggle */}
             <button 
@@ -93,6 +102,8 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
                     { page: Page.NEWS, label: '新聞' },
                     { page: Page.PATCHES, label: '補丁' },
                     { page: Page.SUBSCRIBE, label: '好康福利' },
+                    { page: Page.HOME, label: '關於站長' },
+                    { page: Page.DASHBOARD, label: '會員中心' },
                  ].map((item, idx) => (
                      <button 
                         key={idx}
