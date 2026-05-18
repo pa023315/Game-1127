@@ -54,7 +54,7 @@ const App: React.FC = () => {
       case Page.SIGN_UP:
         return <SignUp onLogin={() => handleNavigate(Page.HOME)} onShowToast={showToast} />;
       case Page.DASHBOARD:
-        return <Dashboard onShowToast={showToast} />;
+        return <Dashboard />;
       case Page.ABOUT:
         return <About onNavigateEditorDetail={() => handleNavigate(Page.EDITOR_DETAIL)} />;
       case Page.EDITOR_DETAIL:

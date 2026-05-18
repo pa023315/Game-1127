@@ -1,10 +1,8 @@
 import React from 'react';
 
-interface DashboardProps {
-    onShowToast: (msg: string, type?: 'success' | 'info') => void;
-}
+interface DashboardProps {}
 
-export const Dashboard: React.FC<DashboardProps> = ({ onShowToast }) => {
+export const Dashboard: React.FC<DashboardProps> = () => {
   return (
     <div className="flex-grow flex flex-col relative bg-[url('https://picsum.photos/id/180/1920/1080')] bg-fixed bg-cover animate-fade-in pt-20">
         <div className="absolute inset-0 bg-brand-mainBg/90 pointer-events-none"></div>
@@ -50,30 +48,8 @@ export const Dashboard: React.FC<DashboardProps> = ({ onShowToast }) => {
                         </div>
                     </div>
 
-                    {/* Wallet Card */}
-                    <div className="bg-brand-card shadow-sm border border-gray-100 rounded-2xl p-6">
-                        <h3 className="text-gray-500 text-xs font-bold uppercase mb-4 flex items-center gap-2">
-                            <i className="fas fa-wallet"></i> 我的資產 (G-Coins)
-                        </h3>
-                        <div className="flex items-end justify-between mb-2">
-                            <span className="text-4xl font-bold text-gray-900 font-mono tracking-tight text-shadow-sm">1,280</span>
-                            <span className="text-yellow-500 text-lg mb-1 animate-bounce"><i className="fas fa-coins"></i></span>
-                        </div>
-                        <div className="w-full bg-gray-100 rounded-full h-1.5 mb-4 overflow-hidden">
-                            <div className="bg-brand-primary h-1.5 rounded-full shadow-sm" style={{width: '70%'}}></div>
-                        </div>
-                        <div className="flex gap-2">
-                            <button className="flex-1 bg-brand-primary hover:bg-brand-secondary text-white font-bold py-2 rounded text-sm transition shadow-sm">
-                                去抽獎
-                            </button>
-                            <button className="flex-1 bg-gray-50 hover:bg-gray-100 text-gray-900 py-2 rounded text-sm transition border border-gray-200">
-                                積分紀錄
-                            </button>
-                        </div>
-                    </div>
-
                     {/* Quick Menu */}
-                    <div className="bg-brand-card shadow-sm border border-gray-100 rounded-2xl p-4">
+                    <div className="bg-brand-card shadow-sm border border-gray-100 rounded-2xl p-4 mt-6">
                         <ul className="space-y-1">
                             <li>
                                 <a href="#" className="flex items-center gap-3 text-gray-600 hover:text-brand-primary hover:bg-gray-50 px-3 py-2 rounded transition group">
@@ -83,6 +59,11 @@ export const Dashboard: React.FC<DashboardProps> = ({ onShowToast }) => {
                             <li>
                                 <a href="#" className="flex items-center gap-3 text-gray-600 hover:text-brand-primary hover:bg-gray-50 px-3 py-2 rounded transition group">
                                     <i className="fas fa-key w-5 text-center text-gray-400 group-hover:text-brand-primary transition"></i> 修改密碼
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" className="flex items-center gap-3 text-gray-600 hover:text-brand-primary hover:bg-gray-50 px-3 py-2 rounded transition group">
+                                    <i className="fas fa-envelope w-5 text-center text-gray-400 group-hover:text-brand-primary transition"></i> 訂閱電子報
                                 </a>
                             </li>
                             <div className="h-px bg-gray-100 my-1"></div>
@@ -99,74 +80,6 @@ export const Dashboard: React.FC<DashboardProps> = ({ onShowToast }) => {
                 {/* Right Content */}
                 <div className="lg:col-span-9 space-y-8">
                     
-                    {/* Quest Board */}
-                    <section>
-                        <div className="flex items-center justify-between mb-4">
-                            <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
-                                <i className="fas fa-scroll text-brand-primary"></i> 每日任務
-                            </h3>
-                            <span className="text-xs text-gray-500 bg-gray-50 px-2 py-1 rounded border border-gray-200">
-                                <i className="far fa-clock mr-1"></i> 每日 00:00 重置
-                            </span>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            {/* Quest 1 (Completed) */}
-                            <div className="bg-gray-50 border border-brand-primary/30 rounded-xl p-4 relative overflow-hidden group hover:bg-gray-100 transition shadow-sm">
-                                <div className="absolute right-2 top-2 text-brand-primary opacity-20 group-hover:opacity-40 transition"><i className="fas fa-check-circle text-4xl"></i></div>
-                                <div className="flex justify-between items-start mb-2 relative z-10">
-                                    <span className="text-gray-900 font-bold">每日登入</span>
-                                    <span className="bg-brand-primary/10 text-brand-primary text-xs px-2 py-0.5 rounded font-bold border border-brand-primary/20">+5 G</span>
-                                </div>
-                                <p className="text-xs text-gray-500 mb-3 relative z-10">登入網站即可完成。</p>
-                                <div className="w-full bg-gray-200 rounded-full h-1.5 mb-2 overflow-hidden">
-                                    <div className="bg-brand-primary h-1.5 rounded-full" style={{width: '100%'}}></div>
-                                </div>
-                                <button disabled className="w-full bg-gray-100 text-brand-primary text-xs font-bold py-1.5 rounded cursor-default border border-brand-primary/20 flex items-center justify-center gap-1">
-                                    <i className="fas fa-check"></i> 已領取
-                                </button>
-                            </div>
-
-                            {/* Quest 2 (In Progress) */}
-                            <div className="bg-brand-card shadow-sm rounded-xl p-4 border border-gray-100 hover:border-brand-primary/50 transition">
-                                <div className="flex justify-between items-start mb-2">
-                                    <span className="text-gray-900 font-bold">閱讀文章</span>
-                                    <span className="bg-yellow-100 text-yellow-600 text-xs px-2 py-0.5 rounded font-bold border border-yellow-200">+15 G</span>
-                                </div>
-                                <p className="text-xs text-gray-500 mb-3">閱讀 3 篇新聞或評測。</p>
-                                <div className="flex justify-between text-[10px] text-gray-400 mb-1">
-                                    <span>進度</span>
-                                    <span>1 / 3</span>
-                                </div>
-                                <div className="w-full bg-gray-100 rounded-full h-1.5 mb-2 overflow-hidden">
-                                    <div className="bg-yellow-400 h-1.5 rounded-full" style={{width: '33%'}}></div>
-                                </div>
-                                <button onClick={() => onShowToast('前往新聞區...', 'info')} className="w-full bg-gray-50 hover:bg-gray-100 text-gray-600 hover:text-gray-900 text-xs font-bold py-1.5 rounded transition border border-gray-200">
-                                    去閱讀
-                                </button>
-                            </div>
-
-                            {/* Quest 3 (Not Started) */}
-                            <div className="bg-brand-card shadow-sm rounded-xl p-4 border border-gray-100 hover:border-brand-primary/50 transition">
-                                <div className="flex justify-between items-start mb-2">
-                                    <span className="text-gray-900 font-bold">分享補丁</span>
-                                    <span className="bg-yellow-100 text-yellow-600 text-xs px-2 py-0.5 rounded font-bold border border-yellow-200">+20 G</span>
-                                </div>
-                                <p className="text-xs text-gray-500 mb-3">將任一補丁頁面分享至社群。</p>
-                                <div className="flex justify-between text-[10px] text-gray-400 mb-1">
-                                    <span>進度</span>
-                                    <span>0 / 1</span>
-                                </div>
-                                <div className="w-full bg-gray-100 rounded-full h-1.5 mb-2">
-                                    <div className="bg-gray-300 h-1.5 rounded-full" style={{width: '0%'}}></div>
-                                </div>
-                                <button onClick={() => onShowToast('請選擇補丁進行分享', 'info')} className="w-full bg-gray-50 hover:bg-gray-100 text-gray-600 hover:text-gray-900 text-xs font-bold py-1.5 rounded transition border border-gray-200">
-                                    去分享
-                                </button>
-                            </div>
-                        </div>
-                    </section>
-
                     {/* Tracked Games */}
                     <section>
                         <div className="flex items-center justify-between mb-4">
