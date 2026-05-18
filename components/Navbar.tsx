@@ -51,7 +51,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
                 { page: Page.NEWS, label: '新聞' },
                 { page: Page.PATCHES, label: '補丁' },
                 { page: Page.SUBSCRIBE, label: '好康福利' },
-                { page: Page.HOME, label: '關於站長' },
+                { page: Page.ABOUT, label: '關於站長' },
             ].map((item, idx) => (
                 <button 
                     key={idx}
@@ -102,7 +102,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
                     { page: Page.NEWS, label: '新聞' },
                     { page: Page.PATCHES, label: '補丁' },
                     { page: Page.SUBSCRIBE, label: '好康福利' },
-                    { page: Page.HOME, label: '關於站長' },
+                    { page: Page.ABOUT, label: '關於站長' },
                     { page: Page.DASHBOARD, label: '會員中心' },
                  ].map((item, idx) => (
                      <button 

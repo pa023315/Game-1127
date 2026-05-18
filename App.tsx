@@ -11,6 +11,8 @@ import { GamePatchDetail } from './pages/GamePatchDetail';
 import { SignUp } from './pages/SignUp';
 import { Dashboard } from './pages/Dashboard';
 import { NewsDetail } from './pages/NewsDetail';
+import { About } from './pages/About';
+import { EditorDetail } from './pages/EditorDetail';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>(Page.HOME);
@@ -53,6 +55,10 @@ const App: React.FC = () => {
         return <SignUp onLogin={() => handleNavigate(Page.HOME)} onShowToast={showToast} />;
       case Page.DASHBOARD:
         return <Dashboard onShowToast={showToast} />;
+      case Page.ABOUT:
+        return <About onNavigateEditorDetail={() => handleNavigate(Page.EDITOR_DETAIL)} />;
+      case Page.EDITOR_DETAIL:
+        return <EditorDetail onShowToast={showToast} onBack={() => handleNavigate(Page.ABOUT)} />;
       default:
         return <Home onShowToast={showToast} />;
     }

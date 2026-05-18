@@ -8,6 +8,8 @@ export enum Page {
   SUBSCRIBE = 'SUBSCRIBE', // Maps to EventHub (formerly CampaignLanding)
   SIGN_UP = 'SIGN_UP', // New Fullscreen Registration Page
   DASHBOARD = 'DASHBOARD', // User Dashboard
+  ABOUT = 'ABOUT',
+  EDITOR_DETAIL = 'EDITOR_DETAIL',
 }
 
 export interface NewsItem {
